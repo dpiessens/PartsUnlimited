@@ -13,6 +13,7 @@ namespace PartsUnlimited.Recommendations
     {
         public AzureMLAuthenticatedHttpClient(IAzureMLFrequentlyBoughtTogetherConfig config)
         {
+            //HACK: Should prefix key with 'AccountKey:'
             var accountKey = Encoding.ASCII.GetBytes(config.AccountKey);
             var header = new AuthenticationHeaderValue("Basic", Convert.ToBase64String(accountKey));
             DefaultRequestHeaders.Authorization = header;
