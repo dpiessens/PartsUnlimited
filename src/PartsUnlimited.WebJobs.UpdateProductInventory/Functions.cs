@@ -18,7 +18,7 @@ namespace PartsUnlimited.WebJobs.UpdateProductInventory
         public async static Task UpdateProductProcessTaskAsync([QueueTrigger("product")] ProductMessage message)
         {
             var builder = new ConfigurationBuilder();
-            builder.Add(new JsonConfigurationSource("config.json"));
+            builder.Add(new JsonConfigurationProvider("config.json"));
             var config = builder.Build();
             var connectionString = config["Data:DefaultConnection:ConnectionString"];
 

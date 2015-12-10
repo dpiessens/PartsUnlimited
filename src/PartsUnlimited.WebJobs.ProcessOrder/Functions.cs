@@ -22,7 +22,7 @@ namespace PartsUnlimited.WebJobs.ProcessOrder
             try
             {
                 var builder = new ConfigurationBuilder();
-                builder.Add(new JsonConfigurationSource("config.json"));
+                builder.Add(new JsonConfigurationProvider("config.json"));
                 var config = builder.Build();
                 var connectionString = config["Data:DefaultConnection:ConnectionString"];
 
