@@ -8,7 +8,8 @@ if($globalJson)
 {
     $dnxVersion = $globalJson.sdk.version
 }
-else
+
+if([string]::IsNullOrEmpty($dnxVersion))
 {
     Write-Warning "Unable to locate global.json to determine using 'latest'"
     $dnxVersion = "latest"
