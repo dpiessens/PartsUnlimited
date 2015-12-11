@@ -1,4 +1,4 @@
-﻿{
+{
   "version": "1.0.0-*",
   "description": "",
   "authors": [ "" ],
@@ -13,8 +13,9 @@
   "commands": {
     "PartsUnlimited.WebJobs.UpdateProductInventory" : "PartsUnlimited.WebJobs.UpdateProductInventory"
   },
-  "frameworks" : {
+  "frameworks": {
     "dnx451": {
     }
-  }
+  },
+  "userSecretsId": "aspnet5-PartsUnlimited.WebJobs.UpdateProductInventory-20151211030908"
 }

@@ -1,21 +1,27 @@
 ﻿{
-    "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
-    "contentVersion": "1.0.0.0",
-    "parameters": {
-        "WebsiteName": {
-            "value": ""
-        },
-        "PartsUnlimitedServerName": {
-            "value": ""
-        },
-        "PartsUnlimitedHostingPlanName": {
-            "value": ""
-        },
-        "CdnStorageAccountName": {
-            "value": ""
-        },
-        "CdnStorageContainerName": {
-            "value": ""
-        }
+  "$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "WebsiteName": {
+      "value": "centpartsunlimited"
+    },
+    "PartsUnlimitedServerName": {
+      "value": "partsunlimitedsql"
+    },
+    "PartsUnlimitedHostingPlanName": {
+      "value": "Free"
+    },
+    "CdnStorageAccountName": {
+      "value": "partsunlimitedmrp"
+    },
+    "CdnStorageContainerName": {
+      "value": "cdn"
+    },
+    "PartsUnlimitedServerAdminLogin": {
+      "value": "centare"
+    },
+    "PartsUnlimitedServerAdminLoginPassword": {
+      "value": "C3nt@r3!"
     }
+  }
 }

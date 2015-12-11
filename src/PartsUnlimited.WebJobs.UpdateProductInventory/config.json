@@ -1,10 +1,10 @@
 ﻿{
 	"Data": {
 		"DefaultConnection": {
-			"ConnectionString": ""
+			"ConnectionString": "Data Source=tcp:partsunlimitedsql.database.windows.net,1433;Initial Catalog=PartsUnlimitedDB;User Id=centare@partsunlimitedsql;Password=C3nt@r3!;"
 		},
 		"AzureWebJobsStorage": {
-			"ConnectionString": ""
+			"ConnectionString": "DefaultEndpointsProtocol=https;AccountName=PartsUnlimitedMRP;AccountKey=emM6Qcz0YxY7tqrCzD00Jq+Whj2GRdmsfgdDAvOKa50xQ4Sl03ngE3HfrEOiCOSKbpiaNNQf9HKeRUjVagm8jA==;BlobEndpoint=https://partsunlimitedmrp.blob.core.windows.net/;TableEndpoint=https://partsunlimitedmrp.table.core.windows.net/;QueueEndpoint=https://partsunlimitedmrp.queue.core.windows.net/;FileEndpoint=https://partsunlimitedmrp.file.core.windows.net/"
 		}
 	}
 }
