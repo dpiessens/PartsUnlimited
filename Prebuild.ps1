@@ -22,6 +22,35 @@ if([string]::IsNullOrEmpty($dnxVersion))
 Write-Host "Bootstrapping DNX version: $dnxVersion"
 & $env:USERPROFILE\.dnx\bin\dnvm install $dnxVersion -p
 
+# Add custom max depth function here
+function Get-MyChildItem
+{
+  param
+  (
+    [Parameter(Mandatory = $true)]
+    $Path,
+    
+    $Filter = '*',
+    
+    [System.Int32]
+    $MaxDepth = 3,
+    
+    [System.Int32]
+    $Depth = 0
+  )
+  
+  $Depth++
+
+  Get-ChildItem -Path $Path -Filter $Filter -File 
+  
+  if ($Depth -le $MaxDepth)
+  {
+    Get-ChildItem -Path $Path -Directory |
+      ForEach-Object { Get-MyChildItem -Path $_.FullName -Filter $Filter -Depth $Depth -MaxDepth $MaxDepth}
+  }
+  
+}
+
  # run DNU restore on all project.json files in the src folder including 2>1 to redirect stderr to stdout for badly behaved tools
 Set-Location $PSScriptRoot
-Get-ChildItem -Path @('src', 'test') -Filter project.json -Recurse -Depth 2 | ForEach-Object { & dnu restore $_.FullName 2>1 }
+Get-MyChildItem -Path @('src', 'test') -Filter project.json -MaxDepth 2 | ForEach-Object { & dnu restore $_.FullName 2>1 }
