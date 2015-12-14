@@ -23,4 +23,6 @@ Write-Host "Bootstrapping DNX version: $dnxVersion"
 & $env:USERPROFILE\.dnx\bin\dnvm install $dnxVersion -p
 
  # run DNU restore on all project.json files in the src folder including 2>1 to redirect stderr to stdout for badly behaved tools
-Get-ChildItem -Path @("$PSScriptRoot\src", "$PSScriptRoot\test") -Depth 3 -Filter project.json -Recurse | ForEach-Object { & dnu restore $_.FullName 2>1 }
+Get-ChildItem -Path @("$PSScriptRoot\src", "$PSScriptRoot\test") -Filter project.json -Recurse
+
+Get-ChildItem -Path @("$PSScriptRoot\src", "$PSScriptRoot\test") -Filter project.json -Recurse | ForEach-Object { & dnu restore $_.FullName 2>1 }
