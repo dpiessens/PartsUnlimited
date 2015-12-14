@@ -19,6 +19,9 @@
   <PropertyGroup Label="Configuration">
     <RootNamespace>PartsUnlimited</RootNamespace>
   </PropertyGroup>
+  <PropertyGroup Label="Deployment">
+    <IntermediateOutputPath>..\Temp</IntermediateOutputPath>
+  </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
     <DevelopmentServerPort>5001</DevelopmentServerPort>

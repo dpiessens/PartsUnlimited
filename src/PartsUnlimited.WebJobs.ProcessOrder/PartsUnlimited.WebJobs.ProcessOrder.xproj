@@ -14,6 +14,9 @@
   <PropertyGroup Label="Configuration" Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <AssemblyName>PartsUnlimited.WebJobs.ProcessOrder</AssemblyName>
   </PropertyGroup>
+  <PropertyGroup Label="Deployment">
+    <IntermediateOutputPath>..\Temp</IntermediateOutputPath>
+  </PropertyGroup>
   <PropertyGroup>
     <SchemaVersion>2.0</SchemaVersion>
   </PropertyGroup>
