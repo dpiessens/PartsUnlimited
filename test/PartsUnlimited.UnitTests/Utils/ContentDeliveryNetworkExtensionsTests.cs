@@ -3,8 +3,8 @@
 
 using Microsoft.AspNet.Html.Abstractions;
 using Microsoft.AspNet.Mvc.Rendering;
-using Microsoft.Framework.Configuration;
-using Microsoft.Framework.WebEncoders;
+using Microsoft.Extensions.Configuration;
+using Microsoft.Extensions.WebEncoders;
 using NSubstitute;
 using PartsUnlimited.WebsiteConfiguration;
 using System;
@@ -36,6 +36,8 @@ namespace PartsUnlimited.Utils
         {
             const string src = "somepath.png";
             const string alt = "some alternate text";
+
+            ContentDeliveryNetworkExtensions.Configuration = null;
 
             var tag = _myHtmlHelper.Image(src, alt);
 
